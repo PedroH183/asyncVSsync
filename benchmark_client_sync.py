@@ -17,6 +17,7 @@ def benchmark():
 
     inicio_total = time.perf_counter()
     for _ in range(NUM_REQUESTS):
+        
         t0 = time.perf_counter()
         response = get_user_client()
         dt = time.perf_counter() - t0
