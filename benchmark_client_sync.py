@@ -13,7 +13,7 @@ def get_user_client():
 
 
 def benchmark():
-    tempos, sucesso = [], 0
+    tempos = []
 
     inicio_total = time.perf_counter()
     for _ in range(NUM_REQUESTS):
@@ -22,7 +22,6 @@ def benchmark():
         dt = time.perf_counter() - t0
 
         if response.status_code == 200:
-            sucesso += 1
             tempos.append(dt)
 
     fim_total = time.perf_counter()
@@ -31,7 +30,6 @@ def benchmark():
     avg_latency = sum(tempos) / len(tempos)
 
     print(f"Requests totais: {NUM_REQUESTS}")
-    print(f"Sucessos (200): {sucesso}")
     print(f"Throughput: {NUM_REQUESTS / total_time:.2f} req/s")
     print(f"Latência média: {avg_latency * 1000:.2f} ms")
 
