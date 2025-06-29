@@ -4,11 +4,11 @@ This project contains a small FastAPI application backed by a PostgreSQL databas
 
 ## Results
 
-### Async
-![alt text](image-1.png)
-
 ### Sync
 ![alt text](image.png)
+
+### Async
+![alt text](image-1.png)
 
 ## Requirements
 
