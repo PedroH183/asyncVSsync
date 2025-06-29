@@ -22,11 +22,10 @@ async def connect_to_db(app: FastAPI):
     # é possível criar esse pool e adicionar no estado do app
     db.db_pool = await asyncpg.create_pool(
         min_size=5,
-        max_size=20,
+        max_size=10,
         dsn=os.getenv("DATABASE_URL"),
     )
 
 
 async def close_db_connection(app: FastAPI):
     await db.db_pool.close()
-    app.state.db_pool = None
