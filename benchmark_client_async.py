@@ -45,8 +45,7 @@ async def benchmark():
         await asyncio.gather(*tasks)
 
         fim_total = time.perf_counter()
-
-    total_time = fim_total - inicio_total
+        total_time = fim_total - inicio_total
 
     print(f"Requests totais : {NUM_REQUESTS}")
     print(f"Throughput      : {NUM_REQUESTS / total_time:.2f} req/s")
